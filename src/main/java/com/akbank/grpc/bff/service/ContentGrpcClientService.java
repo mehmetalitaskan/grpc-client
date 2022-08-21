@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class ContentGrpcClientService {
 
-    @GrpcClient("content-service")
+    @GrpcClient("content")
     private ContentServiceGrpc.ContentServiceBlockingStub blockingStub;
 
     public String sayHi(String message){
@@ -16,4 +16,7 @@ public class ContentGrpcClientService {
                 setMessage(message).build()).
                 getResult();
     }
+
+
+
 }
